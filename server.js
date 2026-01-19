@@ -39,3 +39,6 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () =>
   console.log(`Server running on port ${PORT}`)
 );
+app.get("/register", (req, res) => {
+  res.send("Register endpoint reachable");
+});
