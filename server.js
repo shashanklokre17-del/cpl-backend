@@ -3,8 +3,18 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+
+/* 🔥 CORS FIX */
+app.use(
+  cors({
+    origin: "https://gentle-gingersnap-adc1ca.netlify.app",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"]
+  })
+);
+
 app.use(express.json());
+
 
 mongoose
   .connect(process.env.MONGO_URI)
